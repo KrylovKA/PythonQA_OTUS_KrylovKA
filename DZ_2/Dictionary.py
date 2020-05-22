@@ -28,7 +28,6 @@ def five_fixture_for_test_five_dict():
     print("\n===> Начало теста #5")
 
 
-
 dict_param = [1, 2, 3]
 @pytest.fixture(params=dict_param)
 def first_fixture_for_test_one_dict(request):
@@ -43,10 +42,7 @@ class TestFunction:
         """
         test1 = dict(Moskva=495, Piter=812, Penza=8412)
         assert test1 == {'Moskva': 495, 'Piter': 812, 'Penza': 8412}
-        if test1 == {'Moskva': 495, 'Piter': 812, 'Penza': 8412}:
-            print('Тест успешно пройден')
-        else:
-            print('Тест не пройден')
+        print("\n===> Завершение теста")
 # В примере какому-то значению внутри словаря присваивается ключ.
 # Как написать тест, чтобы какому-то значению внутри словаря присваивался рандомный ключ (495, 812, 8412)?
 # Хочу сделать проверку правильного присванения ключей городам с вероятностью 33%
@@ -66,12 +62,7 @@ class TestFunction:
         test2['eggplant'] = 'purple'
         print(test2)
         assert test2 == {'banan': 'yellow', 'watermelon': 'red', 'cucumber': 'green', 'eggplant': 'purple'}
-        if test2 == {'banan': 'yellow', 'watermelon': 'red', 'cucumber': 'green', 'eggplant': 'purple'}:
-            print('Тест успешно пройден')
-        else:
-            print('Тест не пройден')
-#      yield
-#      print("\n===> Завершение теста")
+        print("\n===> Завершение теста")
 
     def test_from_test_class_three(self, third_fixture_for_test_three_dict):
         """
@@ -87,12 +78,7 @@ class TestFunction:
         del test3['cucumber']
         print(test3)
         assert test3 == {'banan': 'yellow', 'watermelon': 'red'}
-        if test3 == {'banan': 'yellow', 'watermelon': 'red'}:
-            print('Тест успешно пройден')
-        # else:
-        #     print('Тест не пройден')
-#      yield
-#      print("\n===> Завершение теста")
+        print("\n===> Завершение теста")
 
     def test_from_test_class_four(self, four_fixture_for_test_four_dict):
         """
@@ -108,12 +94,7 @@ class TestFunction:
         test4.clear()
         print(test4)
         assert test4 == {}
-        if test4 == {}:
-            print('Тест успешно пройден')
-        else:
-            print('Тест не пройден')
-    #      yield
-    #      print("\n===> Завершение теста")
+        print("\n===> Завершение теста")
 
     def test_from_test_class_five(self, five_fixture_for_test_five_dict):
         """
@@ -128,9 +109,4 @@ class TestFunction:
         print(test5.get('eggplant'))
         print(test5)
         assert (test5.get('eggplant')) == None
-        if (test5.get('eggplant')) == None:
-            print('Тест успешно пройден')
-        else:
-            print('Тест не пройден')
-#      yield
-#      print("\n===> Завершение теста")
+        print("\n===> Завершение теста")

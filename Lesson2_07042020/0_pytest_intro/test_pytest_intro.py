@@ -3,7 +3,6 @@ def test_one():
     assert 2 + 2 == 4
 
 
-# Так тоже можно, но не нужно и с модулем не заработает
 def test_two():
     assert "Here" == "Where?"
 
